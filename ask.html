@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>症状分析</title>
+  <style>
+    body {
+      font-family: -apple-system;
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:40px;
+    }
+    input {
+      width:80%;
+      padding:12px;
+      border-radius:8px;
+      border:none;
+      margin-top:20px;
+    }
+    button {
+      margin-top:20px;
+      padding:12px 24px;
+      background:#7c3aed;
+      color:white;
+      border:none;
+      border-radius:10px;
+    }
+    .result {
+      margin-top:30px;
+      background:#1e293b;
+      padding:20px;
+      border-radius:12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>输入你的症状</h1>
+
+<input id="symptom" placeholder="例如：尿频 + 疲劳">
+
+<br>
+<button onclick="analyze()">开始分析</button>
+
+<div id="output" class="result" style="display:none;"></div>
+
+<script>
+function analyze() {
+  let s = document.getElementById("symptom").value;
+
+  let result = `
+  <h3>初步分析</h3>
+  <p>你可能涉及：代谢异常 / 激素问题 / 慢性炎症</p>
+
+  <p style="margin-top:20px;">
+  👉 已生成个性化方案（饮食 + 干预 + 证据等级）
+  </p>
+
+  <p style="color:#a78bfa;">
+  🔒 完整方案需解锁
+  </p>
+
+  <a href="https://你的支付或微信链接" style="color:white;">
+  👉 点击获取完整方案
+  </a>
+  `;
+
+  document.getElementById("output").style.display = "block";
+  document.getElementById("output").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
